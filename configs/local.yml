@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:3000"
+  tls:
+    rejectUnauthorized: false
+  ensure: 
+    p95: 2000
+    p99: 3000
+  plugins:
+    expect: {}
+payload:
+    path: "publicbrowsepaths.csv"
+    fields:
+    - "path"
