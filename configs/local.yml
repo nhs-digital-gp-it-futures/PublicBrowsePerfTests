@@ -1,5 +1,8 @@
 config:
   target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
   tls:
     rejectUnauthorized: false
   ensure: 
@@ -7,7 +10,9 @@ config:
     p99: 3000
   plugins:
     expect: {}
-payload:
-    path: "publicbrowsepaths.csv"
-    fields:
-    - "path"
+  payload:
+      path: "../payloads/publicbrowsepaths.csv"
+      fields:
+      - "path"
+      order: sequence
+      skipHeader: true
